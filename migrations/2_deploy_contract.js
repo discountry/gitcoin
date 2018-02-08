@@ -7,6 +7,8 @@ module.exports = function(deployer, network, accounts) {
   const wallet = accounts[0]
   // const token = '0x00'
 
+  // deployer.deploy(GitCoinCrowdsale, durationTime, rate, wallet, token);
+
   deployer.deploy(GitCoin).then(function() {
     return deployer.deploy(GitCoinCrowdsale, durationTime, rate, wallet, GitCoin.address);
   });
