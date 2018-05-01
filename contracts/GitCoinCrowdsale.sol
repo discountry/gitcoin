@@ -98,7 +98,7 @@ contract GitCoinCrowdsale {
     require(_token != address(0));
 
     startTime = now;
-    endTime = now + _durationTime * 1 minutes;
+    endTime = now.add(_durationTime).mul(1 minutes);
     rate = _rate;
     wallet = _wallet;
     tokenReward = token(_token);
